@@ -2,6 +2,7 @@ package iteration
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -20,7 +21,7 @@ func BenchmarkRepeat(b *testing.B) {
 func TestRepeat(t *testing.T) {
 	t.Run("Repeat 'a' character 5 times", func(t *testing.T) {
 		repeated := Repeat("a", 5)
-		expected := "aaaaa"
+		expected := strings.Repeat("a", 5)
 
 		if repeated != expected {
 			t.Errorf("expected %q but got %q", expected, repeated)
@@ -28,7 +29,7 @@ func TestRepeat(t *testing.T) {
 	})
 	t.Run("Repeat 'c; character n times", func(t *testing.T) {
 		repeated := Repeat("c", 10)
-		expected := "cccccccccc"
+		expected := strings.Repeat("c", 10)
 
 		if repeated != expected {
 			t.Errorf("expected %q but got %q", expected, repeated)
