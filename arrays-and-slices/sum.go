@@ -11,11 +11,7 @@ func Sum(numbers []int) int {
 func SumAll(numbersToSum ...[]int) []int {
 	var result []int
 	for _, numbers := range numbersToSum {
-		sum := 0
-		for _, number := range numbers {
-			sum += number
-		}
-		result = append(result, sum)
+		result = append(result, Sum(numbers))
 	}
 	return result
 }
